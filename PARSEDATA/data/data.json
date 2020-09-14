@@ -1,20 +1,13 @@
 {
-  "Students": [
+  "People": [
     {
       "name": "Kalene",
-      "grade": "senior",
-      "Classes": ["215, 315"]
+      "lname": "Kingery"
     },
 
     {
       "name": "Bob",
-      "grade": "senior",
-      "Classes": ["215, 315", "215, 315", "215, 315"]
-    },
-    {
-      "name": "Nancy",
-      "grade": "senior",
-      "Classes": ["215, 315"]
+      "lname": "Ross"
     }
   ]
 }
