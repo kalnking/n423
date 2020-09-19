@@ -5,16 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather | Project</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-    <h1>Get Weather</h1>
-    <p>Put your zipcode to get accurate weather.</p>
 
-    <div class="inputBox">
-      <input type="text" id="zipcode" />
-      <button id="getWeather">Get Weather</button>
+  <body>
+    <div class="content-wrapper">
+      <div class="weather-content">
+        <div class="nav-holder">
+          <div class="selected">
+            <a href="#" id="homeButton">HOME</a>
+            <div class="activeLink"></div>
+          </div>
+          <div class="selected">
+            <a href="#" id="browseButton">NEWS</a>
+            <div class="activeLink"></div>
+          </div>
+          <div class="selected">
+            <a href="#" id="createButton">SIGN UP</a>
+            <div class="activeLink"></div>
+          </div>
+          <div class="selected loginSelect">
+            <a href="#" id="login">LOGIN</a>
+          </div>
+        </div>
+
+        <h1>Get Weather</h1>
+        <p>Put your zipcode to get accurate weather.</p>
+        <div class="inputBox">
+          <input type="text" id="zipcode" />
+          <button id="getWeather">Get Weather</button>
+        </div>
+        <div class="content"></div>
+      </div>
     </div>
-    <div class="content"></div>
     <script src="lib/jquery-3.5.1.min.js"></script>
     <script src="app/app.js"></script>
   </body>

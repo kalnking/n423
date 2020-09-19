@@ -1,0 +1,17 @@
+{
+  "name": "weatherproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "author": "Kalene Kingery",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
