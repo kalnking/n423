@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "lato-light";
+  src: url("/css/fonts/Lato-Bold.ttf");
+}
+@font-face {
+  font-family: "lato-bold";
+  src: url("/css/fonts/Lato-Bold.ttf");
+}
+
 .nav-holder {
   font-family: caveat-regular;
   height: 52px;
@@ -5,6 +14,7 @@
   z-index: 99;
   display: flex;
   justify-content: left;
+  font-family: "lato-bold";
 }
 
 a {

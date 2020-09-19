@@ -10,19 +10,36 @@ body {
 h1 h2 h3 h4 h5 h6 p {
   margin-bottom: 16px; }
 
+@font-face {
+  font-family: "lato-light";
+  src: url("/css/fonts/Lato-Bold.ttf"); }
+
+@font-face {
+  font-family: "lato-bold";
+  src: url("/css/fonts/Lato-Bold.ttf"); }
+
 .nav-holder {
   font-family: caveat-regular;
   height: 52px;
   width: 600px;
   z-index: 99;
   display: flex;
-  justify-content: left; }
+  justify-content: left;
+  font-family: "lato-bold"; }
 
 a {
   text-decoration: none;
   margin-right: 30px;
   font-size: 20px;
   color: #1b79de; }
+
+@font-face {
+  font-family: "lato-light";
+  src: url("/css/fonts/Lato-Bold.ttf"); }
+
+@font-face {
+  font-family: "lato-bold";
+  src: url("/css/fonts/Lato-Bold.ttf"); }
 
 .content-wrapper {
   width: 100%;
@@ -35,7 +52,8 @@ a {
   padding: 0;
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: "lato-light"; }
 
 .weather-content {
   margin-left: 300px;
@@ -61,4 +79,7 @@ h2 {
   color: #1b79de; }
 
 .inputBox {
+  margin-bottom: 20px; }
+
+.dropdown {
   margin-bottom: 20px; }

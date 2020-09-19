@@ -17,6 +17,10 @@
             <div class="activeLink"></div>
           </div>
           <div class="selected">
+            <a href="#" id="browseButton">RADAR</a>
+            <div class="activeLink"></div>
+          </div>
+          <div class="selected">
             <a href="#" id="browseButton">NEWS</a>
             <div class="activeLink"></div>
           </div>
@@ -31,11 +35,21 @@
 
         <h1>Get Weather</h1>
         <p>Put your zipcode to get accurate weather.</p>
+
         <div class="inputBox">
           <input type="text" id="zipcode" />
           <button id="getWeather">Get Weather</button>
         </div>
+
         <div class="content"></div>
+        <p>Select amount of days.</p>
+        <div id="dropdown" class="dropdown">
+          <select id="select_drop" class="select_drop">
+            <option value="">1 day</option>
+            <option value="2">2 days</option>
+            <option value="2">3 days</option>
+          </select>
+        </div>
       </div>
     </div>
     <script src="lib/jquery-3.5.1.min.js"></script>
