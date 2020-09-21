@@ -1,6 +1,6 @@
 var apiKey = "03e1feb4053344258b8193752201409";
-var baseURL = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=`;
-var forecastBaseUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=46203&days=`;
+var baseURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&days=3&q=`;
+var forecastArray = {};
 
 function getData(fullURL) {
   $.get(fullURL, function(data) {
@@ -24,10 +24,19 @@ function getData(fullURL) {
   });
 }
 
+function parseForecast(forecastArray) {
+  $.each(forecastArray, function(idx, data) {
+    console.log(value);
+    $(".forecastContent").html(`<p>${data.forecast.forecastday}</p>`);
+  });
+}
+
 function initListeners() {
   $("#getWeather").click(function() {
     var zip = $("#zipcode").val();
-    var fullURL = baseURL + zip;
+    var daycount = $("#forecastDays").val();
+    var dayConnect = "&days=";
+    var fullURL = baseURL + zip + dayConnect + daycount;
     console.log(fullURL);
     getData(fullURL);
   });

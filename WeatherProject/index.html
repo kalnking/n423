@@ -38,17 +38,16 @@
 
         <div class="inputBox">
           <input type="text" id="zipcode" />
-          <button id="getWeather">Get Weather</button>
         </div>
-
-        <div class="content"></div>
-        <p>Select amount of days.</p>
-        <div id="dropdown" class="dropdown">
-          <select id="select_drop" class="select_drop">
-            <option value="">1 day</option>
-            <option value="2">2 days</option>
-            <option value="2">3 days</option>
+        <p>Enter the amount of days.</p>
+        <select name="days" id="forecastDays">
+            <option value="1">1</option> 
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
+          <button id="getWeather">Get Weather</button>
+          <div class="content"></div>
+          <div class="forecastContent"></div>
         </div>
       </div>
     </div>
