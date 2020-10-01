@@ -1,10 +1,12 @@
 var apiKey = "03e1feb4053344258b8193752201409";
-var baseURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&days=3&q=`;
-var forecastArray = {};
+var baseURL = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=`;
+var forecastURL = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=`;
+var endForecastURL = `&days=3`;
 
 function getData(fullURL) {
   $.get(fullURL, function(data) {
     console.log(data);
+    //parseForecast(data.forecast.forecastArray);
     let iconURL = data.current.condition.icon;
     $(".content").html(
       `<h2>${data.current.temp_f} &#8457</h2>
@@ -25,9 +27,9 @@ function getData(fullURL) {
 }
 
 function parseForecast(forecastArray) {
-  $.each(forecastArray, function(idx, data) {
+  $.each(forecastArray, function(idx, value) {
     console.log(value);
-    $(".forecastContent").html(`<p>${data.forecast.forecastday}</p>`);
+    $(".forecastContent").append(`<p>${data.forecast.forecastday.day}</p>`);
   });
 }
 
