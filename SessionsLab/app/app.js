@@ -1,14 +1,5 @@
 globalThis.data = {
-  students: [
-    {
-      name: "Kalene",
-      age: "27",
-      phone: "3175169535",
-      email: "kalnking@iu.edu",
-      class: "N423",
-      empty: true
-    }
-  ]
+  students: []
 };
 
 //if (localStorage) {
