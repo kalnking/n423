@@ -7,19 +7,21 @@
     <title>Local Storage Example</title>
   </head>
   <body>
-    <form id="studentLog">
-      <input placeholder="name" id="name" type="text" /> <br />
-      <input placeholder="age" id="age" type="text" /><br />
-      <input placeholder="phone" id="phone" type="text" /><br />
-      <input placeholder="email" id="email" type="text" /><br />
-      <input placeholder="class" id="class" type="text" /><br />
+    <form id="formID">
+      <input placeholder="name" name="name" type="text" /> <br />
+      <input placeholder="age" name="age" type="text" /><br />
+      <input placeholder="phone" name="phone" type="text" /><br />
+      <input placeholder="email" name="email" type="text" /><br />
+      <input placeholder="class" name="class" type="text" /><br />
     </form>
     <br />
     <br />
     <button onclick="addStudents()">Add Student</button>
     <button onclick="showStudents()">Show Log</button>
+    <br />
+    <br />
     <div class="log"></div>
-
+    <script src="lib/jquery-3.5.1.min.js"></script>
     <script src="app/app.js"></script>
   </body>
 </html>
