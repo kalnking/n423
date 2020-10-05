@@ -1,5 +1,14 @@
 globalThis.data = {
-  students: []
+  students: [
+    {
+      name: "Kalene",
+      age: "27",
+      phone: "3175169535",
+      email: "kalnking@iu.edu",
+      class: "N423",
+      empty: true
+    }
+  ]
 };
 
 //if (localStorage) {
@@ -18,8 +27,6 @@ function getData() {
       "log_students",
       JSON.stringify(globalThis.data.students)
     );
-    // } else {
-    //   globalThis.data = JSON.parse(localStorage.getItem("log_students"));
   }
 }
 
@@ -36,8 +43,6 @@ function addStudents() {
     newStudent[input.name] = input.value;
   }
   console.log(newStudent);
-  //var newStudent = document.getElementById("name").value;
-  console.log(globalThis.data.students);
   data.students.push({
     name: newStudent.name,
     age: newStudent.age,
@@ -46,14 +51,18 @@ function addStudents() {
     class: newStudent.class
   });
 
-  localStorage.setItem("data", JSON.stringify(data.students));
+  localStorage.setItem("data", JSON.stringify(globalThis.data.students));
 }
 
 function showStudents() {
   let studentData = JSON.parse(localStorage.getItem("log_students"));
   $(".log").html("");
   $.each(globalThis.data.students, function(idx, value) {
-    $(".log").append(`${value}`);
+    $(".log").append(`<br/><p>Name: ${value.name}</p>
+    <p>Age: ${value.age}</p>
+    <p>Phone: ${value.phone}</p>
+    <p>Email: ${value.email}</p>
+    <p>Class: ${value.class}</p>`);
   });
 }
 
