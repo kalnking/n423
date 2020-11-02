@@ -1,0 +1,16 @@
+{
+  "name": "firestorequery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve-local": "firebase serve --only hosting",
+    "deploy-without-functions": "firebase deploy --except functions",
+    "compile:sass": "node-sass public/sass/main.scss public/css/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
