@@ -32,6 +32,25 @@ var NxtTASK_SERVICE = (function() {
     return projectContent;
   };
 
+  var _getLoginContent = function() {
+    let loginContent = `
+    <form style="margin-left: 300px; margin-top: 100px;">
+    <h1 class="display-3 text-success">Welcome to NxtTASK</h1>
+  <div class="form-group col-md-8">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group col-md-8">
+    <label for="exampleInputPassword1">Password</label>
+    <input ype="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group form-check">
+  <button type="submit" class="btn btn-success">Login</button>
+</form>`;
+    return loginContent;
+  };
+
   var _getDisplayProject = function(id) {
     let displayProject = ``;
     return displayProject;
@@ -147,6 +166,7 @@ margin-top: 50px;" >Create a Project</h1>
     getProjectContent: _getProjectContent,
     getDisplayProject: _getDisplayProject,
     getCreateProject: _getCreateProject,
-    getEditDataContent: _getEditDataContent
+    getEditDataContent: _getEditDataContent,
+    getLoginContent: _getLoginContent
   };
 })();

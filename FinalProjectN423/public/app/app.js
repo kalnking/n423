@@ -10,6 +10,7 @@ function initNavButtons() {
   navHome();
   navProjectCreate();
   navProjectBrowse();
+  navLogin();
 }
 
 function navHome() {
@@ -35,6 +36,15 @@ function navProjectCreate() {
     nameAddInput();
     taskAddInput();
     saveButton();
+  });
+}
+
+function navLogin() {
+  $("#loginButton").click(function(e) {
+    console.log("login page");
+    $("#allContent").html(NxtTASK_SERVICE.getLoginContent());
+    NxtTASK_SERVICE.getAllData(displayData);
+    console.log(idn);
   });
 }
 
