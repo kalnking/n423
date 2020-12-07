@@ -27,7 +27,8 @@ var NxtTASK_SERVICE = (function() {
   };
 
   var _getProjectContent = function() {
-    let projectContent = `<div class="projectContent"></div>`;
+    let projectContent = `<div class="projectContent">
+    </div>`;
     return projectContent;
   };
 
@@ -38,29 +39,91 @@ var NxtTASK_SERVICE = (function() {
 
   var _getCreateProject = function(id) {
     let createContent = `
-    <h1 class="display-3 text-success">Create a Project</h1>
-    <form>      
+    <h1 class="display-3 text-success" style="margin-left: 100px;
+margin-top: 50px;" >Create a Project</h1>
+    <form style="margin-left: 100px;">      
     <div class="form-group col-md-8">     
-        <input type="desc" class="form-control" id="desc" placeholder="Enter Description">
+                <input type="text" class="form-control" id="name" placeholder="Project Name">
+      </div> 
+    <div class="form-group col-md-8">     
+        <input type="text" class="form-control" id="desc" placeholder="Enter Description">
       </div>
       <div class="form-group col-md-8">   
-        <input type="name" class="form-control" id="name" placeholder="Enter Team Member Name">
-      </div>
+                <input type="text" class="form-control" name="tm[]" id="teamList" placeholder="Enter Team Member Name">
+        <button style="border-radius: 50%; display: flex; float: right;" id="${id}" class="nameAddInput btn btn-success mb-2">+</button> </div>
       <div class="form-group col-md-8">   
-      <input type="name" class="form-control" id="task" placeholder="Enter Task">
-    </div>
+                <input type="text" class="form-control" id="taskList" name="tsk[]"placeholder="Enter Task">
+    <button style="border-radius: 50%; display: flex; float: right;" id="${id}" class="taskAddInput btn btn-success mb-2">+</button> </div>
     <div class="form-group col-md-8">
-      <input type="date" class="form-control" id="date" placeholder="Enter Due Date">
+                <input type="text" class="form-control" id="date" placeholder="Enter Due Date">
     </div>
-    </div>
-    <div class="form-group col-md-8">
-    <button type="submit" class="btn btn-success">Save Project</button>
+    </<h1>
+    <div class=" saveButton form-group col-md-8">
+    <button type="submit" id="${id}" class=" saveData btn btn-success">Save Project</button>
     </div>
 
   </form>
   `;
 
     return createContent;
+  };
+
+  var _updateData = function(id, name, desc, team, task, date) {
+    console.log(id);
+    let projectData = {
+      projectName: name,
+      projectDescription: desc,
+      dueDate: date,
+      taskList: task,
+      teamMember: team
+    };
+    _db
+      .collection("Project")
+      .doc(id)
+      .update(projectData)
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        callback("New Project Added");
+      })
+      .catch(function(error) {
+        console.log("Error adding document: ", error);
+      });
+  };
+
+  var _addData = function(id, name, desc, team, task, date) {
+    console.log(name);
+    let projectData = {
+      projectName: name,
+      projectDescription: desc,
+      dueDate: date,
+      taskList: task,
+      teamMember: team
+    };
+    _db
+      .collection("Project")
+      .add(projectData)
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        callback("New Project Added");
+      })
+      .catch(function(error) {
+        console.log("Error adding document: ", error);
+      });
+  };
+
+  var _getEditDataContent = function(id) {
+    let editContent = `<div class="editProject"></div>`;
+
+    return editContent;
+  };
+
+  var _deleteData = function(id) {
+    _db
+      .collection("Project")
+      .doc(id)
+      .delete();
+    console.log("DELETED!!");
+    callback("Project Deleted");
   };
 
   var _initFirebase = function(callback) {
@@ -77,9 +140,13 @@ var NxtTASK_SERVICE = (function() {
   return {
     initFirebase: _initFirebase,
     getAllData: _getAllData,
+    addData: _addData,
+    updateData: _updateData,
+    deleteData: _deleteData,
     getHomeContent: _getHomeContent,
     getProjectContent: _getProjectContent,
     getDisplayProject: _getDisplayProject,
-    getCreateProject: _getCreateProject
+    getCreateProject: _getCreateProject,
+    getEditDataContent: _getEditDataContent
   };
 })();
