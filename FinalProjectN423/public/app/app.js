@@ -193,7 +193,7 @@ function displayProject(addData) {
     <p class="card-text">${rawData.dueDate}</p>
 
     <a href="#" class="editProjectBtn text-success"  id="${id}" >Edit Project</a>
-    <a id="${id}"  style="margin-left: 15px;" class="deleteData text-success">Delete Project</a>
+    <a id="${id}"  style="margin-left: 15px;" class="deleteData text-success">Completed</a>
    
   </div>
 </div>`;
